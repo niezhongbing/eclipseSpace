@@ -90,7 +90,7 @@
 			<version>3.3.2</version>
 		</dependency>
 
-		<dependency>
+		<!-- <dependency>
 			<groupId>org.apache.poi</groupId>
 			<artifactId>poi</artifactId>
 			<version>3.16</version>
@@ -99,7 +99,7 @@
 			<groupId>org.apache.poi</groupId>
 			<artifactId>poi-ooxml-schemas</artifactId>
 			<version>3.16</version>
-		</dependency> 
+		</dependency>  -->
 	</dependencies>
 
 	<profiles>

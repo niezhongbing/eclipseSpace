@@ -107,6 +107,16 @@ public class XWPFTemplateTestV4 {
 			put("studentName", "约翰史密斯");
 			put("teacher", "汤姆汉克斯");
 			put("date", "2017-06-01");
+			put("changeLog", new TableRenderData(new ArrayList<RenderData>(){{
+				add(new TextRenderData("d0d0d0", ""));
+				add(new TextRenderData("d0d0d0", ""));
+				add(new TextRenderData("d0d0d0", ""));
+				add(new TextRenderData("d0d0d0", "introduce"));
+			}},new ArrayList<Object>(){{
+				add("1;add new # gramer;1;1");
+				add("2;support insert table;1;1");
+				add("3;support more style;1;1");
+			}}, "no datas", 10000));
 		}};
 
 		XWPFTemplate template = XWPFTemplate.compile("src/test/resources/实验报告模板.docx").render(datas);;
