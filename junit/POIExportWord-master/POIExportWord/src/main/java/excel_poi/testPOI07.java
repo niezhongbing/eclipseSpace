@@ -101,4 +101,39 @@ public class testPOI07 {
         workBook.close();  
         outputStream.close();  
     }  
+    
+    
+    @Test
+    public void testTable(){
+    	  HSSFWorkbook hwb = new HSSFWorkbook();
+    	     HSSFSheet sheet = hwb.createSheet("test sheet");
+    	     //创建一个样式
+    	     HSSFCellStyle style = hwb.createCellStyle();
+    	     //设置边框样式
+    	     style.setBorderTop(HSSFCellStyle.BORDER_THIN);
+    	     style.setBorderBottom(HSSFCellStyle.BORDER_THIN);
+    	     style.setBorderLeft(HSSFCellStyle.BORDER_THIN);
+    	     style.setBorderRight(HSSFCellStyle.BORDER_THIN);
+    	     //设置边框颜色
+    	     style.setTopBorderColor(HSSFColor.BLACK.index);
+    	     style.setBottomBorderColor(HSSFColor.BLACK.index);
+    	     style.setLeftBorderColor(HSSFColor.BLACK.index);
+    	     style.setRightBorderColor(HSSFColor.BLACK.index);
+    	     
+    	     for(int j=0;j<5;j++){
+    	         HSSFRow row = sheet.createRow(j);
+    	         for(int i=0;i<10;i++){
+    	             HSSFCell cell = row.createCell(i);
+    	             cell.setCellStyle(style);
+    	             cell.setCellValue(j+"*"+i);
+    	         }
+    	     }
+    	     File file = new File("D://test.xls");
+    	     try {
+    	         FileOutputStream fos = new FileOutputStream(file);
+    	         hwb.write(fos);
+    	     } catch (Exception e) {
+    	         e.printStackTrace();
+    	     } 
+    }
 }  
