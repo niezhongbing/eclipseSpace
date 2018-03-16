@@ -70,7 +70,7 @@ public class ExportController {
     	final String urlImage = this.getClass().getClassLoader().getResource("emblem.png").getPath();
     	final String urlWord = this.getClass().getClassLoader().getResource("实验报告模板.docx").getPath();
     	Map<String, Object> datas = new HashMap<String, Object>(){{
-			put("score", "92");
+			put("score", new TextRenderData("df2d4f", "张三"));
 			put("emblem", new PictureRenderData(150, 150, "" + urlImage));
 			put("college", "自动化");
 			put("profession", "自动化技术");
@@ -95,7 +95,8 @@ public class ExportController {
         XWPFTemplate template = XWPFTemplate.compile(urlWord).render(datas);;
 
         FileOutputStream out = null;
-        String fileName = "out_实验报告模板_1";
+        String fileName = "D:\\out_实验报告模板_1.docx";
+		
 		try {
 			out = new FileOutputStream(fileName);
 			template.write(out);

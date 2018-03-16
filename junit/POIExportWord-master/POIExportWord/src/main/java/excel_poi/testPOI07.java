@@ -65,7 +65,7 @@ public class testPOI07 {
         HSSFWorkbook workBook = new HSSFWorkbook();  
           
         //创建合并单元格对象  
-        CellRangeAddress rangeAddress = new CellRangeAddress(2, 2, 2, 4);  
+        CellRangeAddress rangeAddress = new CellRangeAddress(0, 0, 2, 4);  
         //创建样式  
         HSSFCellStyle style = workBook.createCellStyle();  
         style.setAlignment(HorizontalAlignment.CENTER);  
@@ -77,9 +77,9 @@ public class testPOI07 {
         font.setColor(HSSFColor.GREEN.index);  
         font.setBold(true);  
         style.setFont(font);  
-        //设置背景  
+      /*  //设置背景  
         style.setFillPattern(FillPatternType.SOLID_FOREGROUND);  
-        style.setFillForegroundColor(HSSFColor.RED.index);  
+        style.setFillForegroundColor(HSSFColor.RED.index);  */
           
         //2.创建工作表  
         HSSFSheet sheet = workBook.createSheet("我是测试");  
