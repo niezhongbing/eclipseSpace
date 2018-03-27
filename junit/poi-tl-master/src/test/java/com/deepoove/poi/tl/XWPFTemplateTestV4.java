@@ -25,8 +25,8 @@ public class XWPFTemplateTestV4 {
 	@Test
 	public void testV4() throws Exception {
 		Map<String, Object> datas = new HashMap<String, Object>(){{
-			put("header_version", "ver 0.0.3");
-			put("hello", "ver 0.0.3");
+			put("header_version", "ver 0.0.2");
+			put("footer_version", "ver 0.0.3");
 			put("logo", new PictureRenderData(100, 120, "src/test/resources/logo.png"));
 			put("title", new TextRenderData("9d55b8", "Deeply in love with the things you love,\\n just deepoove."));
 			put("changeLog", new TableRenderData(new ArrayList<RenderData>(){{

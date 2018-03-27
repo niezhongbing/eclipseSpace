@@ -18,6 +18,9 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.bhusk.utils.ExportUtil;
 import com.deepoove.poi.XWPFTemplate;
@@ -143,4 +146,21 @@ public class ExportController {
 	    myout.flush();
     }
 
+    @ResponseBody
+    @RequestMapping(value ="httpUrl",method= RequestMethod.POST ,produces="text/html;charset=utf-8")
+    public String junitHttpURLConnection(@RequestParam Map<String, String> map,HttpServletRequest request){
+    	String param = map.get("name");
+    	String resultMessage = "你的传递的参数是";
+    	if(param == null) return "没有参数传递";
+    	if(param.equals("张三")){
+    		resultMessage += param;
+    	}else if(param.equals("李四")){
+    		resultMessage += param;
+    	}else{
+    		return resultMessage+param;
+    	}
+    	
+    	return resultMessage;
+    }
+    
 }

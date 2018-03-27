@@ -53,6 +53,7 @@ public class TableRenderTest {
 						add(new TextRenderData("1E915D", "city"));
 					}
 				}, null, "no datas", 8000));
+
 				put("no_content_table2", new TableRenderData(new ArrayList<RenderData>() {
 					{
 						add(new TextRenderData("1E915D", "province"));
