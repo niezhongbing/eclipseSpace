@@ -35,7 +35,10 @@ public class LoginController {
 	public String login(@RequestParam Map<String, String> map,HttpServletRequest request) throws Exception{
 		String username = map.get("username");
 		String password = map.get("password");
-		String randomcode = map.get("randomcode");
+		String randomcode = map.get("randomcode"); //ÑéÖ¤Âë
+		if(!randomcode.equals("99999")){
+			return "login";
+		}
         Subject currentUser = SecurityUtils.getSubject();
         UsernamePasswordToken token = null;
 	      if (!currentUser.isAuthenticated()) {
