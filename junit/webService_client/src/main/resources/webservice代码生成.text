@@ -1,0 +1,4 @@
+根据wsdl路径生成java代码 -s:生成客户端执行类的源文件的存放目录 -p:定义生成类的包名
+wsimport -p cn.cad.mobile -s . "wsdl路径"
+
+原生的jax-ws不需要任何jar包，如果使用cxf或者axis，请自行百度下载相应jar包！
